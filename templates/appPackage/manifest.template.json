@@ -5,8 +5,8 @@
     "id": "{{state.fx-resource-appstudio.teamsAppId}}",
     "packageName": "com.microsoft.teams.extension",
     "developer": {
-        "name": "Teams App, Inc.",
-        "websiteUrl": "{{{state.fx-resource-frontend-hosting.endpoint}}}",
+        "name": "Siglud",
+        "websiteUrl": "https://github.com/Siglud/teams-plugin-daily-ts-tips",
         "privacyUrl": "{{{state.fx-resource-frontend-hosting.endpoint}}}{{{state.fx-resource-frontend-hosting.indexPath}}}/privacy",
         "termsOfUseUrl": "{{{state.fx-resource-frontend-hosting.endpoint}}}{{{state.fx-resource-frontend-hosting.indexPath}}}/termsofuse"
     },
@@ -15,14 +15,14 @@
         "outline": "resources/outline.png"
     },
     "name": {
-        "short": "{{config.manifest.appName.short}}",
-        "full": "{{config.manifest.appName.full}}"
+        "short": "Daily Tips for TypeScript",
+        "full": "Give your daily tips about TypeScript"
     },
     "description": {
-        "short": "Short description of {{config.manifest.appName.short}}",
-        "full": "Full description of {{config.manifest.appName.short}}"
+        "short": "Give you a daily tips about TypeScript/JavaScript",
+        "full": "Give you a daily tips about TypeScript/JavaScript. Mostly coming from MSDN and Google TypeScript Style Guide"
     },
-    "accentColor": "#FFFFFF",
+    "accentColor": "#A8CAC7",
     "bots": [
         {
             "botId": "{{state.fx-resource-bot.botId}}",

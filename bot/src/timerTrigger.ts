@@ -1,21 +1,27 @@
-import fs from 'fs';
 import { AzureFunction, Context } from "@azure/functions";
 import { AdaptiveCards } from "@microsoft/adaptivecards-tools";
 import notificationTemplate from "./adaptiveCards/notification-default.json";
 import { CardData } from "./cardModels";
 import { bot } from "./internal/initialize";
+import fs from 'fs'
 
 const content = fs.readFileSync('./content/content.txt', 'utf8').split('\n\n');
 const totalLine = content.length;
+// test only
+var globalCounter = 0;
+
 
 // Time trigger to send notification. You can change the schedule in ../timerNotifyTrigger/function.json
 const timerTrigger: AzureFunction = async function (context: Context, myTimer: any): Promise<void> {
-  const line = Math.floor((Math.random() * totalLine));
+  // const now = new Date();
+  // const line = Math.floor(now.getTime() / 8.64e7) % totalLine;
+  // test only
+  // const line = globalCounter++ % totalLine;
+  const line = totalLine - 1;
   for (const target of await bot.notification.installations()) {
     await target.sendAdaptiveCard(
       AdaptiveCards.declare<CardData>(notificationTemplate).render({
         title: "TypeScript Daily Tips!",
-        appName: "TypeScript tips",
         description: content[line]
       })
     );

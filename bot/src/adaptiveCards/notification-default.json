@@ -12,15 +12,6 @@
     },
     {
       "type": "TextBlock",
-      "text": "${appName}",
-      "isSubtle": true,
-      "color": "Accent",
-      "weight": "Bolder",
-      "size": "Small",
-      "spacing": "None"
-    },
-    {
-      "type": "TextBlock",
       "text": "${description}",
       "isSubtle": true,
       "wrap": true
